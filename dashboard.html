@@ -10,14 +10,19 @@
     <link rel="stylesheet" type="text/css" href="css/local.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+    <script src="/js/userUpdate.js"></script>
+    <style>
+        body.modal-open div.modal-backdrop {
+            z-index: 0;
+        }
+    </style>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
     
 <body>
     <div id="wrapper">
-          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <nav style="background-color:#33cccc;" class="navbar navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -25,8 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><a class="pull-left"> <img src="img/20160406_570477e158580-210x210.png" href="" width="20"/></a>
-Admin Panel</a>
+                <a class="navbar-brand" href="index.html">Admin Panel</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
@@ -52,7 +56,52 @@ Admin Panel</a>
                 </div>
             </div>
         </div>
-        
+        <div class=-"container-fluid">
+            <div id="userCard"class="well col-xs-6 col-md-6 col-sm-6 col-lg-6">
+                <h2 class="h2 text-center">Welcome User!</h2>
+                <br>
+                <h3>Name</h3>
+                <h5>Contact</h5>
+                <h5>Designation</h5>
+                <h5>Organisation</h5>
+                <button id="update" data-toggle="modal" data-target="#myModal" type="button" class=" col-xs-2 btn btn-primary" title="Click to update details!">Update</button>
+            </div>
+        </div>
+        <div>
+            <a href="#" data-toggle="modal" data-target="#myModal"><i class="material-icons material-icons-lg-24 material-icons-md-dark" id="add">note_add</i></a>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 style="color:black;" class="modal-title h4">Admin Details</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container-fluid">
+                        <form method="" action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" required placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" required placeholder="Contact">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" required placeholder="Designation">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" required placeholder="Orgnisation">
+                            </div>
+                            <button type="submit" id="submit" class="col-xs-4 btn btn-primary" target="#userCard" data-dismiss="modal">Enter</button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
     </div>
     
 </body>
